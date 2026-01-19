@@ -1,0 +1,177 @@
+/* Landing.module.css */
+
+:root {
+  --bg: #050816;
+  --bg-alt: #0b1020;
+  --text-main: #ffffff;
+  --text-muted: #a0a6c3;
+  --primary: #8b5cf6;
+  --primary-soft: #6366f1;
+  --accent: #22d3ee;
+}
+
+/* ---------- PAGE CONTAINER ---------- */
+
+.container {
+  min-height: 100vh;
+  background: radial-gradient(circle at top left, #1f2937 0, #020617 40%, #000 100%);
+  color: var(--text-main);
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Inter", sans-serif;
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+}
+
+/* ---------- HERO ---------- */
+
+.hero {
+  padding: 6rem 8vw 4rem;
+  text-align: center;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.title {
+  font-size: clamp(2.8rem, 6vw, 4rem);
+  margin-bottom: 1rem;
+  font-weight: 800;
+  letter-spacing: 0.03em;
+}
+
+.title span {
+  background: linear-gradient(120deg, #8b5cf6, #22d3ee);
+  -webkit-background-clip: text;
+  color: transparent;
+}
+
+.subtitle {
+  font-size: 1.05rem;
+  line-height: 1.6;
+  color: var(--text-muted);
+  max-width: 600px;
+  margin: 0 auto 2.5rem;
+}
+
+/* ---------- BUTTONS ---------- */
+
+.primaryBtn,
+.secondaryBtn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.9rem 1.9rem;
+  border-radius: 999px;
+  font-weight: 600;
+  font-size: 0.95rem;
+  text-decoration: none;
+  cursor: pointer;
+  transition: transform 0.18s ease, box-shadow 0.18s ease, background 0.18s ease,
+    color 0.18s ease, border-color 0.18s ease;
+}
+
+/* main CTA */
+.primaryBtn {
+  background: linear-gradient(135deg, var(--primary), var(--accent));
+  color: #ffffff;
+  box-shadow: 0 18px 45px rgba(56, 189, 248, 0.45);
+  border: none;
+}
+
+.primaryBtn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 22px 55px rgba(56, 189, 248, 0.6);
+}
+
+/* outline CTA */
+.secondaryBtn {
+  margin-top: 1.5rem;
+  background: transparent;
+  color: #e5e7eb;
+  border: 1px solid rgba(148, 163, 184, 0.6);
+  backdrop-filter: blur(16px);
+}
+
+.secondaryBtn:hover {
+  background: rgba(148, 163, 184, 0.1);
+  transform: translateY(-1px);
+}
+
+/* ---------- FEATURES ---------- */
+
+.features {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+  gap: 1.5rem;
+  padding: 0 8vw 4rem;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.card {
+  background: radial-gradient(circle at top left, #1f2937 0, #020617 55%);
+  border-radius: 1rem;
+  padding: 1.6rem 1.8rem;
+  color: var(--text-main);
+  font-size: 0.98rem;
+  font-weight: 500;
+  border: 1px solid rgba(148, 163, 184, 0.35);
+  box-shadow: 0 20px 45px rgba(15, 23, 42, 0.7);
+  position: relative;
+  overflow: hidden;
+}
+
+.card::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle at top right, rgba(139, 92, 246, 0.25), transparent 55%);
+  opacity: 0;
+  transition: opacity 0.25s ease;
+}
+
+.card:hover::before {
+  opacity: 1;
+}
+
+.card:hover {
+  transform: translateY(-4px);
+  border-color: rgba(129, 140, 248, 0.9);
+}
+
+/* ---------- CTA SECTION ---------- */
+
+.cta {
+  padding: 3.5rem 8vw 4.5rem;
+  text-align: center;
+  background: linear-gradient(145deg, rgba(15, 23, 42, 0.95), rgba(15, 23, 42, 0.75));
+  border-top: 1px solid rgba(148, 163, 184, 0.25);
+  margin-top: auto;
+}
+
+.cta h2 {
+  font-size: clamp(1.7rem, 3vw, 2.1rem);
+  margin-bottom: 0.4rem;
+}
+
+.cta p {
+  color: var(--text-muted);
+  margin-bottom: 1.4rem;
+  font-size: 0.98rem;
+}
+
+/* ---------- RESPONSIVE ---------- */
+
+@media (max-width: 640px) {
+  .hero {
+    padding-top: 4.5rem;
+    padding-inline: 1.5rem;
+  }
+
+  .features {
+    padding-inline: 1.5rem;
+  }
+
+  .cta {
+    padding-inline: 1.5rem;
+  }
+}

@@ -1,0 +1,20 @@
+.container {
+  padding: 2.5rem 3rem;
+  max-width: 700px;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.lesson {
+  padding: 1rem;
+  border: 1px solid #eee;
+  border-radius: 6px;
+}
+
+.error {
+  color: #ef4444;
+}

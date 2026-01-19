@@ -1,0 +1,38 @@
+.grid {
+  margin-top: 1.5rem;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: 1.5rem;
+}
+
+.card {
+  padding: 1.2rem;
+  border: 1px solid #eee;
+  border-radius: 8px;
+}
+
+.progress {
+  margin: 0.6rem 0;
+  font-size: 0.9rem;
+  color: #555;
+}
+
+.progressBar {
+  width: 100%;
+  height: 8px;
+  background: #eee;
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+.progressFill {
+  height: 100%;
+  background: #4f46e5;
+}
+.continueBtn {
+  display: inline-block;
+  margin-top: 1rem;
+  text-decoration: none;
+  color: #4f46e5;
+  font-size: 0.9rem;
+}

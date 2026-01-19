@@ -1,0 +1,21 @@
+.container {
+  padding: 2.5rem 3rem;
+  max-width: 800px;
+}
+
+.lessonBox {
+  margin-top: 1.5rem;
+  padding: 1.5rem;
+  border: 1px solid #eee;
+  border-radius: 8px;
+}
+
+.completeBtn {
+  margin-top: 2rem;
+  background: #22c55e;
+  color: white;
+  padding: 0.7rem 1.5rem;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+}
