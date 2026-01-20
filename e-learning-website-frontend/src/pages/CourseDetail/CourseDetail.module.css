@@ -1,44 +1,209 @@
+/* CourseDetail.module.css */
+
 .container {
-  padding: 2.5rem 3rem;
-  max-width: 800px;
-}
-
-.description {
-  margin: 1rem 0;
-  color: #555;
-}
-
-.meta {
-  display: flex;
-  gap: 1.5rem;
-  margin-bottom: 2rem;
-  color: #666;
-}
-
-.lessons ul {
-  margin-top: 1rem;
-  padding-left: 1.2rem;
-}
-
-.lessons li {
-  margin-bottom: 0.5rem;
-}
-
-.enrollBtn {
-  margin-top: 2rem;
-  background: #4f46e5;
-  color: white;
-  padding: 0.7rem 1.5rem;
-  border: none;
-  border-radius: 6px;
-  cursor: pointer;
+  max-width: 1200px;
+  margin: 2rem auto;
+  padding: 0 5vw;
+  min-height: 100vh;
 }
 
 .loading {
-  padding: 2rem;
+  text-align: center;
+  font-size: 1.1rem;
+  color: #a0a6c3;
+  padding: 6rem 2rem;
 }
 
-.error {
-  color: #ef4444;
-  margin-top: 1rem;
+/* ---------- HEADER ---------- */
+
+.header {
+  background: linear-gradient(135deg, rgba(15, 23, 42, 0.95), rgba(17, 24, 39, 0.9));
+  border-radius: 24px;
+  padding: 3.5rem 2.5rem;
+  text-align: center;
+  border: 1px solid rgba(75, 85, 99, 0.4);
+  box-shadow: 0 30px 70px rgba(15, 23, 42, 0.6);
+  margin-bottom: 3rem;
+  position: relative;
+  overflow: hidden;
+}
+
+.header::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: linear-gradient(90deg, #8b5cf6, #22d3ee);
+}
+
+.header h1 {
+  font-size: clamp(2.2rem, 5vw, 3rem);
+  font-weight: 800;
+  background: linear-gradient(135deg, #ffffff, #e5e7eb);
+  -webkit-background-clip: text;
+  color: transparent;
+  margin-bottom: 1rem;
+  letter-spacing: -0.02em;
+}
+
+.description {
+  font-size: 1.1rem;
+  color: #a0a6c3;
+  line-height: 1.65;
+  max-width: 700px;
+  margin: 0 auto 2.5rem;
+}
+
+/* ---------- META ---------- */
+
+.meta {
+  display: flex;
+  justify-content: center;
+  gap: 1.5rem;
+  flex-wrap: wrap;
+}
+
+.meta span {
+  background: rgba(139, 92, 246, 0.2);
+  color: #c4b5fd;
+  padding: 0.6rem 1.2rem;
+  border-radius: 25px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  border: 1px solid rgba(139, 92, 246, 0.4);
+}
+
+.meta span:last-child {
+  background: linear-gradient(135deg, #10b981, #059669);
+  color: #ecfdf5;
+  border-color: rgba(16, 185, 129, 0.5);
+}
+
+/* ---------- CONTENT ---------- */
+
+.content {
+  background: rgba(15, 23, 42, 0.6);
+  border-radius: 20px;
+  padding: 2.5rem;
+  border: 1px solid rgba(75, 85, 99, 0.3);
+  backdrop-filter: blur(12px);
+  margin-bottom: 3rem;
+}
+
+.content h3 {
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: #ffffff;
+  margin-bottom: 1.8rem;
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+}
+
+.content p {
+  color: #a0a6c3;
+  font-size: 1rem;
+  margin-bottom: 2rem;
+}
+
+.lessonList {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.lessonItem {
+  background: rgba(31, 41, 55, 0.8);
+  border: 1px solid rgba(75, 85, 99, 0.4);
+  border-radius: 12px;
+  padding: 1.2rem 1.5rem;
+  margin-bottom: 1rem;
+  color: #e5e7eb;
+  font-weight: 500;
+  font-size: 1rem;
+  transition: all 0.2s ease;
+  position: relative;
+  cursor: pointer;
+}
+
+.lessonItem::before {
+  content: '📚';
+  margin-right: 0.8rem;
+  font-size: 1.1rem;
+}
+
+.lessonItem:hover {
+  background: rgba(139, 92, 246, 0.15);
+  border-color: rgba(139, 92, 246, 0.5);
+  transform: translateX(4px);
+  color: #ffffff;
+}
+
+/* ---------- ACTIONS ---------- */
+
+.actions {
+  display: flex;
+  justify-content: center;
+}
+
+.enrollBtn {
+  padding: 1.3rem 3rem;
+  background: linear-gradient(135deg, #8b5cf6, #22d3ee);
+  color: #ffffff;
+  border: none;
+  border-radius: 16px;
+  font-size: 1.1rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.25s ease;
+  box-shadow: 0 20px 45px rgba(139, 92, 246, 0.4);
+  letter-spacing: 0.02em;
+}
+
+.enrollBtn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 28px 60px rgba(139, 92, 246, 0.55);
+}
+
+.enrollBtn:active {
+  transform: translateY(-1px);
+}
+
+/* ---------- RESPONSIVE ---------- */
+
+@media (max-width: 768px) {
+  .container {
+    padding: 0 1.5rem;
+    margin: 1.5rem 1rem;
+  }
+
+  .header {
+    padding: 2.5rem 2rem;
+    margin-bottom: 2rem;
+  }
+
+  .content {
+    padding: 2rem 1.8rem;
+  }
+
+  .meta {
+    gap: 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .header h1 {
+    font-size: 1.9rem;
+  }
+
+  .description {
+    font-size: 1rem;
+  }
+
+  .enrollBtn {
+    padding: 1.1rem 2.5rem;
+    font-size: 1rem;
+  }
 }
